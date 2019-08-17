@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include<math.h>
+
+/*  16/08/2019 
+ *  Faça um programa que leia um float que representa
+ *  o raio de um círculo e exiba a área deste círculo.
+ *  https://brasilescola.uol.com.br/matematica/area-circulo.htm
+*/
+int main() {
+    float n,area;
+    scanf("%f",&n);
+    area = 2 *  * pow(n,2);
+    printf("%f\n",area);
+    return 0;
+}
