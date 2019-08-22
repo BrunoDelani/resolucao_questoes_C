@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+
+
+int main()
+{
+    int numero[10],contador,comparador;
+    
+    for(contador = 0; contador < 10; contador++){
+         scanf("%d",&numero[contador]);
+        for(comparador = contador -1; comparador >= 0; comparador--){
+            if(numero[contador] == numero[comparador]){
+                contador = contador -1;
+                printf("Número repetido, será inválidado.\n");
+            }
+        }
+    }
+    
+    for(contador = 0; contador < 10; contador++){
+        
+     printf("%d. %d\n",contador+1,numero[contador]);   
+    }
+    
+
+    return 0;
+}
