@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+
+int main()
+{
+    char nome[10];
+    char nome2[10];
+    int contador,comp = 0;
+    int l1 = 0, l2 = 0;
+    
+    scanf("%s",&nome);
+    scanf("%s",&nome2);
+    
+    for(contador = 0; contador < 10; contador++){
+        if(nome[contador] == '\0'){
+            contador = 10;
+        }else{
+            l1 = l1 + 1;
+        }
+    }
+    
+    for(contador = 0; contador < 10; contador++){
+        if(nome[contador] == '\0'){
+            contador = 10;
+        }else{
+            l2 = l2 + 1;
+        }
+    }
+    
+    if(l1 == l2){
+    for(contador = 0; contador < 10; contador++){
+        if(nome[contador] != nome2[contador]){
+            comp = comp + 1;
+        }
+        if(nome[contador] == '\0'){
+            contador = 10;
+        }
+        
+    }
+    if(comp == 0){
+    printf("Strings iguais!\n");
+    }else{
+    printf("String diferentes!\n");    
+    }
+    }else{
+        printf("String diferentes!\n");
+    }
+    return 0;
+}
