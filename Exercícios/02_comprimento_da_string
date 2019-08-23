@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+
+int main()
+{
+    char nome[10];
+    int contador,letras = 0;
+    
+    scanf("%s",&nome);
+    
+    for(contador = 0; contador < 10; contador++){
+        if(nome[contador] == '\0'){
+            contador = 10;
+        }else{
+            letras = letras + 1;
+        }
+    }
+
+    printf("TAMANHO STRING: %d",letras);
+    return 0;
+}
