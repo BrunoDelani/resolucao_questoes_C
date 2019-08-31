@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char frase[100];
+    int i = 0, a= 0;
+    
+    scanf("%[^\n]%*c",frase);
+    printf("%s\n",frase);
+
+      while(frase[i] != '\0'){
+      if(frase[i] == ' '){
+        printf(" ");
+      } else if(frase[i] == 'X'){
+        printf("A");
+      }else if(frase[i] == 'Y'){
+        printf("B");
+      }else if(frase[i] == 'Z'){
+        printf("C");
+      }else if(frase[i] == 'x'){
+        printf("a");
+      }else if(frase[i] == 'y'){
+        printf("b");
+      }else if(frase[i] == 'z'){
+        printf("c");
+      }else{ 
+      printf("%c",frase[i]+3);
+      }
+        i++;
+    }
+    return 0;
+}
