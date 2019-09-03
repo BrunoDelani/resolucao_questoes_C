@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+    char frase[50];
+    char letra1[2];
+    char letra2[2];
+    int i = 0;
+    
+    printf("Frase:");
+    scanf("%[^\n]",frase);
+    printf("Letra a ser trocada:");
+    scanf(" %s",letra1);
+    printf("Letra a ser colocada pela outra:");
+    scanf(" %s",letra2);
+    
+    printf("%s\n",frase);
+
+      while(frase[i] != '\0'){
+      if(letra1[0] == frase[i]){
+          frase[i] = letra2[0];
+      }
+      i++;
+    }
+    
+    printf("%s\n",frase);
+    return 0;
+}
