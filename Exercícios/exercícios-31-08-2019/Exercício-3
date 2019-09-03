@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    char frase[50];
+    int i = 0;
+    
+    scanf("%[^\n]%*c",frase);
+    printf("%s\n",frase);
+
+      while(frase[i] != '\0'){
+      printf("%c",frase[i]+1);
+      
+        i++;
+    }
+    return 0;
+}
