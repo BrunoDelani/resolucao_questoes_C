@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <string.h>
+
+
+    struct horario {
+        int hora;
+        int minuto;
+        int segundos;
+    };
+    
+    struct data {
+        int dia;
+        int mes;
+        int ano;
+    };
+    
+    struct compromisso{
+        struct horario horario_compromisso;
+        struct data data_compromisso;
+        char descricao[100];
+    };
+    
+
+
+int main()
+{
+    struct horario teste_horario = {12,0,0};
+    struct data teste_data = {6,9,2019};
+    
+    
+    printf("Horário: %02d:%02d:%02d\n",teste_horario.hora,teste_horario.minuto,teste_horario.segundos);
+    printf("Data: %02d/%02d/%04d\n",teste_data.dia,teste_data.mes,teste_data.ano);
+    
+    /* ALTERANDO HORA E DATA */
+    printf("\nATERANDO DATA E HORA...\n\n");
+    teste_horario.hora = 13;
+    teste_horario.minuto = 30;
+    teste_horario.segundos = 0;
+    teste_data.dia = 7;
+    teste_data.mes = 9;
+    teste_data.ano = 2019;
+    
+    printf("Horário: %02d:%02d:%02d\n",teste_horario.hora,teste_horario.minuto,teste_horario.segundos);
+    printf("Data: %02d/%02d/%04d\n",teste_data.dia,teste_data.mes,teste_data.ano);
+
+
+    printf("\nCOMPROMISSO...\n\n");
+    struct compromisso teste_compromisso;
+    teste_compromisso.horario_compromisso.hora = 15;
+    teste_compromisso.horario_compromisso.minuto = 45;
+    teste_compromisso.horario_compromisso.segundos = 0;
+    teste_compromisso.data_compromisso.dia = 13;
+    teste_compromisso.data_compromisso.mes = 10;
+    teste_compromisso.data_compromisso.ano = 2019;
+    strcpy(teste_compromisso.descricao,"REUNIÃO");
+    
+    printf("Horário compromisso: %02d:%02d:%02d\n",teste_compromisso.horario_compromisso.hora,teste_compromisso.horario_compromisso.minuto,teste_compromisso.horario_compromisso.segundos);
+    printf("Data compromisso: %02d/%02d/%04d\n",teste_compromisso.data_compromisso.dia,teste_compromisso.data_compromisso.mes,teste_compromisso.data_compromisso.ano);
+    printf("%s\n",teste_compromisso.descricao);
+    
+    return 0;
+}
