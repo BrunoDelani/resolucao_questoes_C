@@ -11,6 +11,12 @@ int main()
 {
     struct pessoa fisrt = {"Bruno",18,"Endereço"};
     
+    scanf("%[^\n]",fisrt.nome);
+    scanf(" %d\n",&fisrt.idade);
+    scanf("%[^\n]",fisrt.endereco);
+    
+    printf("\n\n=============== FICHA ===============\n");
+    
     printf("Nome: %s\n",fisrt.nome);
     printf("Idade: %d\n",fisrt.idade);
     printf("Endereço: %s\n",fisrt.endereco);
