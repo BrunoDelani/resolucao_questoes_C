@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+struct pessoa{
+  char nome[50];
+  int idade;
+  char endereco[100];
+};
+
+
+int main()
+{
+    struct pessoa fisrt = {"Bruno",18,"Endereço"};
+    
+    printf("Nome: %s\n",fisrt.nome);
+    printf("Idade: %d\n",fisrt.idade);
+    printf("Endereço: %s\n",fisrt.endereco);
+
+    return 0;
+}
