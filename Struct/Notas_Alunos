@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+struct aluno{
+  char nome[50];
+  int matricula;
+  int idDisciplina;
+  float nota1;
+  float nota2;
+  float media;
+};
+
+
+int main()
+{
+    struct aluno al[10];
+    int i;
+    for(i = 0; i < 10;i++){
+        al[i].nota1 = 0;
+        al[i].nota2 = 0;
+    }
+    
+    for(i = 0; i < 10;i++){
+        printf("ID %d\n",i+1);
+        printf("Nome: ");
+        scanf(" %[^\n]",al[i].nome);
+        printf("Matricula: ");
+        scanf(" %d",&al[i].matricula);
+        printf("ID Disciplina: ");
+        scanf(" %d",&al[i].idDisciplina);
+        printf("Nota 1: ");
+        scanf(" %f",&al[i].nota1);
+        printf("Nota 2: ");
+        scanf(" %f",&al[i].nota2);
+        al[i].media = ((al[i].nota1*1)+(al[i].nota2*2))/3;
+        printf("\n\n");
+    }
+    
+    printf("\n\n==================== FICHAS ====================\n\n");
+    
+    for(i = 0; i < 10;i++){
+        printf("Nome: %s\n",al[i].nome);
+        printf("Media ponderada: %.2f\n\n",al[i].media);
+    }
+    
+
+    return 0;
+}
