@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+
+struct Ponto{
+    int x;
+    int y;
+};
+
+struct Grade{
+    struct Ponto Eixo1;
+    struct Ponto Eixo2;
+};
+
+int VerificadorGrade(struct Ponto ponto, struct Grade grade){
+    int count = 0;
+    if(ponto.x < grade.Eixo2.x || ponto.x > grade.Eixo1.x){
+        count++;
+    }
+    if(ponto.y < grade.Eixo2.y || ponto.y > grade.Eixo2.y){
+        count++;
+    }
+    
+    if(count == 2){
+        printf("Está localizado dentro do retângulo.\n");
+        return 1;
+    }
+    printf("Não está localizado dentro do retângulo.\n");
+    return 0;
+}
+
+
+int main()
+{
+    struct Ponto p;
+    struct Grade g;
+    
+    printf("Eixo x: ");
+    scanf("%d",&p.x);
+    printf("Eixo y: ");
+    scanf("%d",&p.y);
+    printf("\n");
+    printf("Vértice esquerdo[dois valores]:\n");
+    scanf("%d %d",&g.Eixo1.x,&g.Eixo1.y);
+    printf("Vértice direito[dois valores]: \n");
+    scanf("%d %d",&g.Eixo2.x,&g.Eixo2.y);
+    printf("\n");
+    
+    VerificadorGrade(p,g);
+    
+    
+    
+
+    return 0;
+}
