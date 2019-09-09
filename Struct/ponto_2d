@@ -28,7 +28,6 @@ int VerificadorGrade(struct Ponto ponto, struct Grade grade){
     return 0;
 }
 
-
 int main()
 {
     struct Ponto p;
@@ -44,11 +43,6 @@ int main()
     printf("Vértice direito[dois valores]: \n");
     scanf("%d %d",&g.Eixo2.x,&g.Eixo2.y);
     printf("\n");
-    
     VerificadorGrade(p,g);
-    
-    
-    
-
     return 0;
 }
