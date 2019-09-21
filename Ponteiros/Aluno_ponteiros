@@ -1,0 +1,77 @@
+#include <stdio.h>
+#include <stdlib.h> //necessária para usar malloc
+
+typedef struct{
+    char nome[50];
+    int idade;
+    float nota;
+} Aluno;
+
+typedef struct{
+    char *nome;
+    int idade;
+    float nota;
+} OutroAluno;
+
+int main() {
+
+    //uma maneira de fazer c = a+b utilizando ponteiros
+    int a, b, c;
+
+    a = 8;
+    b = 13;
+    int *p;  // p é um ponteiro para um inteiro
+    int *q;
+    p = &a;  // o valor de p é o endereço de a
+    q = &b;  // q aponta para b
+    c = *p + *q;
+
+    a = 5;
+    b = 8;
+    int **r; // ponteiro para ponteiro para inteiro
+    p = &a;  // p aponta para a
+    r = &p;  // r aponta para p e *r aponta para a
+    c = **r + b;
+
+    int *v;
+    v = malloc (100 * sizeof (int));  //alocação dinamica de memória
+    v[0] = 1;
+    v[1] = 2;
+    v[2] = 50;
+    printf("%d, %d, %d\n", v[0], v[1], v[2]);
+    printf("%d, %d, %d\n", *v, *(v+1), *(v+2));
+
+    //...
+
+    char *str;
+    str = malloc (20 * sizeof (char));
+    printf("Digite uma string: ");
+    scanf("%s", str);
+    printf("A string lida foi [%s]", str);
+
+
+    str = malloc (71 * sizeof (char));
+    str = "Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas";
+    printf("\nA string é [%s]", str);
+
+    Aluno aluno;
+    aluno.idade = 18;
+    aluno.nota = 10.0;
+    printf("\nEntre com o nome do aluno:");
+    scanf(" %s", aluno.nome);
+    printf("\nO nome é [%s]", aluno.nome);
+
+    Aluno *ptr_aluno = &aluno;
+    printf("\nEntre com o nome do aluno:");
+    scanf(" %s", ptr_aluno->nome);
+
+    printf("\nO nome é [%s]", ptr_aluno->nome);
+    printf("\nO nome é [%s]", (*ptr_aluno).nome); //alternativa
+
+    OutroAluno al;
+    char *n = malloc (50 * sizeof (char));
+    printf("\nEntre com o nome do aluno 3:");
+    scanf(" %s", n);
+    al.nome = n;
+    printf("<%s>", al.nome);
+}
