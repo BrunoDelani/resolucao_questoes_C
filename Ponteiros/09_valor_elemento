@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void escrever(int *p,int size){
+    int j;
+    for(j = 0; j<size;j++){
+        scanf("%d",&p[j]);
+    }
+}
+
+void ler(int *p,int size){
+    int j;
+    for(j = 0;j<size;j++){
+        printf("%d ",*(p+j));
+    }
+
+}
+
+int main()
+{
+    int n[5];
+    escrever(n,5);
+    ler(n,5);
+    
+    return 0;
+}
